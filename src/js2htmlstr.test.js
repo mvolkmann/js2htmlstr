@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import elements from './index.js';
+import elements from './js2htmlstr.js';
 const {div, img, p} = elements;
 
 test('element with text', () => {

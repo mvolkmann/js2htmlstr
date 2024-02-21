@@ -1,5 +1,14 @@
 {
-  "name": "js2html",
+  "name": "js2htmlstr",
+  "version": "1.0.0",
+  "description": "collection of JS functions that generate HTML strings",
+  "author": "R. Mark Volkmann",
+  "license": "MIT",
+  "keywords": [
+    "HTML",
+    "JavaScript",
+    "string"
+  ],
   "type": "module",
   "scripts": {
     "check": "tsc --noEmit",

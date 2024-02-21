@@ -3,10 +3,10 @@
  * generate strings of HTML from JavaScript.
  */
 
-/** @typedef {import('./types.js').Attributes} Attributes } */
-/** @typedef {import('./types.js').Child} Child } */
-/** @typedef {import('./types.js').ContentFn} ContentFn } */
-/** @typedef {import('./types.js').SelfClosingFn} SelfClosingFn } */
+/** @typedef {import('./types.d.ts').Attributes} Attributes } */
+/** @typedef {import('./types.d.ts').Child} Child } */
+/** @typedef {import('./types.d.ts').ContentFn} ContentFn } */
+/** @typedef {import('./types.d.ts').SelfClosingFn} SelfClosingFn } */
 
 /**
  * Generates an HTML string for an element with a close tag.

@@ -1,0 +1,14 @@
+{
+  "name": "js2html",
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "format": "prettier --write '**/*.{css,html,js,ts,tsx}'",
+    "reinstall": "rm -rf node_modules bun.lockb && bun install",
+    "test": "bun --watch test"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.0.0",
+    "typescript": "^5.3.3"
+  }
+}

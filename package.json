@@ -1,6 +1,6 @@
 {
   "name": "js2htmlstr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "collection of JS functions that generate HTML strings",
   "author": "R. Mark Volkmann",
   "license": "MIT",
@@ -9,6 +9,7 @@
     "JavaScript",
     "string"
   ],
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "check": "tsc --noEmit",

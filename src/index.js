@@ -3,8 +3,8 @@
  * generate strings of HTML from JavaScript.
  */
 
-/** @typedef {import('./types.d.ts').ContentFn} ContentFn } */
-/** @typedef {import('./types.d.ts').SelfClosingFn} SelfClosingFn } */
+/** @typedef {import('./types.js').ContentFn} ContentFn } */
+/** @typedef {import('./types.js').SelfClosingFn} SelfClosingFn } */
 /** @typedef {Object.<string, boolean | number | string>} Attributes */
 /** @typedef {string|number} Child */
 

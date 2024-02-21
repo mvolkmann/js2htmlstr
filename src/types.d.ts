@@ -5,6 +5,6 @@ export declare type ContentFn = (
 
 export declare type SelfClosingFn = (attrs?: Attributes) => string;
 
-export declare type StringToAny = { [key: string]: any };
+export declare type StringToAny = {[key: string]: any};
 
-export declare type StringToString = { [key: string]: string };
+export declare type StringToString = {[key: string]: string};

@@ -14,7 +14,7 @@ test('element with attributes and text', () => {
 });
 
 test('element with child elements', () => {
-  const html = div([p('Hello'), p('World')]);
+  const html = div(p('Hello'), p('World'));
   expect(html).toBe('<div><p>Hello</p><p>World</p></div>');
 });
 

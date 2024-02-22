@@ -1,5 +1,6 @@
 import {expect, test} from 'bun:test';
-import {div, el, h1, img, input, validate, p, section} from './js2htmlstr.js';
+import elements, {el, validate} from './js2htmlstr.js';
+const {div, h1, img, input, p, section} = elements;
 
 test('element with text', () => {
   const html = p('Hello, World!');

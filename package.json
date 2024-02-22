@@ -1,6 +1,6 @@
 {
   "name": "js2htmlstr",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "JS functions that generate and validate HTML strings",
   "author": "R. Mark Volkmann",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "clean": "rm -rf dist",
     "format": "prettier --write '**/*.{css,html,js,ts,tsx}'",
     "minify": "terser src/js2htmlstr.js --compress --mangle -o dist/js2htmlstr.min.js",
-    "prepublishOnly": "mkdir -p dist && npm run minify",
+    "prepublishOnly": "mkdir -p dist && npm run minify && cp src/js2htmlstr.d.ts dist",
     "reinstall": "rm -rf node_modules package-lock.json && npm install",
     "test": "bun --watch test"
   },

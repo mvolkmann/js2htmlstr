@@ -4,7 +4,7 @@ export declare type Child = string | number;
 
 export declare type ContentFn = (
   attrs: Attributes | Children,
-  children?: Children
+  ...children: Child[]
 ) => string;
 
 export declare type SelfClosingFn = (attrs?: Attributes) => string;

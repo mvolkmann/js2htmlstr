@@ -1,6 +1,6 @@
 {
   "name": "js2htmlstr",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "JS functions that generate and validate HTML strings",
   "author": "R. Mark Volkmann",
   "license": "MIT",
@@ -9,6 +9,10 @@
     "JavaScript",
     "string"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mvolkmann/js2htmlstr.git"
+  },
   "main": "dist/js2htmlstr.min.js",
   "type": "module",
   "scripts": {

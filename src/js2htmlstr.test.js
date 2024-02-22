@@ -1,6 +1,6 @@
 import {expect, test} from 'bun:test';
 import tagMap, {el} from './js2htmlstr.js';
-const {div, h1, img, input, p, section} = tagMap;
+const {div, h1, img, p, section} = tagMap;
 
 test('element with text', () => {
   const html = p('Hello, World!');

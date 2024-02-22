@@ -167,15 +167,18 @@ const selfClosingElements = [
 ];
 
 /** @type {TagMap} */
+// @ts-ignore because the required properties haven't been added yet.
 const tagMap = {};
 
 for (const name of contentElements) {
+  // @ts-ignore
   tagMap[name] = /** @type {ContentFn} */ (
     (attrs, ...children) => el(name, attrs, ...children)
   );
 }
 
 for (const name of selfClosingElements) {
+  // @ts-ignore
   tagMap[name] = /** @type {SelfClosingFn} */ (attrs => elc(name, attrs));
 }
 

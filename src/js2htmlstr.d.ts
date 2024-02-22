@@ -1,18 +1,19 @@
 export declare type Attributes = Record<string, boolean | number | string>;
 
 export declare type Child = string | number;
+export declare type Children = Child[];
 
 export function el(
   name: string,
-  attrs: Attributes | Child[],
-  ...children: Child[]
+  attrs: Attributes | Children,
+  ...children: Children
 ): string;
 
 export function elc(name: string, attrs?: Attributes): string;
 
 export declare type ContentFn = (
   attrs: Attributes | Children,
-  ...children: Child[]
+  ...children: Children
 ) => string;
 
 export declare type SelfClosingFn = (attrs?: Attributes) => string;
@@ -98,7 +99,7 @@ const contentTags = [
   'ul',
   'var',
   'video'
-];
+] as const;
 
 const selfClosingTags = [
   'area',
@@ -114,7 +115,7 @@ const selfClosingTags = [
   'source',
   'track',
   'wbr'
-];
+] as const;
 
 /* With this approach, functions like `div` will have a type of `any`. */
 type ContentTagMap = Record<(typeof contentTags)[number], ContentFn>;

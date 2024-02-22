@@ -6,8 +6,8 @@
 /** @typedef {import('./js2htmlstr.d.ts').Attributes} Attributes } */
 /** @typedef {import('./js2htmlstr.d.ts').Child} Child } */
 /** @typedef {import('./js2htmlstr.d.ts').ContentFn} ContentFn } */
-/** @typedef {import('./js2htmlstr.d.ts').Elements} Elements } */
 /** @typedef {import('./js2htmlstr.d.ts').SelfClosingFn} SelfClosingFn } */
+/** @typedef {import('./js2htmlstr.d.ts').TagMap} TagMap } */
 
 /**
  * Generates an HTML string for an element with a close tag.
@@ -166,20 +166,17 @@ const selfClosingElements = [
   'wbr'
 ];
 
-/** @type {Elements} */
-// @ts-ignore because the required properties haven't been added yet.
-const elements = {};
+/** @type {TagMap} */
+const tagMap = {};
 
 for (const name of contentElements) {
-  // @ts-ignore
-  elements[name] = /** @type {ContentFn} */ (
+  tagMap[name] = /** @type {ContentFn} */ (
     (attrs, ...children) => el(name, attrs, ...children)
   );
 }
 
 for (const name of selfClosingElements) {
-  // @ts-ignore
-  elements[name] = /** @type {SelfClosingFn} */ (attrs => elc(name, attrs));
+  tagMap[name] = /** @type {SelfClosingFn} */ (attrs => elc(name, attrs));
 }
 
-export default elements;
+export default tagMap;

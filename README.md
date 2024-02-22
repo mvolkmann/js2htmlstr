@@ -7,8 +7,8 @@ This is a collection of JavaScript functions that generate HTML strings.
 The following code demonstrates basic usage.
 
 ```js
-import elements from 'js2htmlstr';
-const {h1, img, p, section} = elements;
+import tagMap from 'js2htmlstr';
+const {h1, img, p, section} = tagMap;
 
 // This creates the following HTML with no newlines or other whitespace.
 // <section>

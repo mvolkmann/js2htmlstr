@@ -2,6 +2,14 @@ export declare type Attributes = Object<string, boolean | number | string>;
 
 export declare type Child = string | number;
 
+export function el(
+  name: string,
+  attrs: Attributes | Child[],
+  ...children: Child[]
+): string;
+
+export function elc(name: string, attrs?: Attributes): string;
+
 export declare type ContentFn = (
   attrs: Attributes | Children,
   ...children: Child[]
@@ -9,6 +17,115 @@ export declare type ContentFn = (
 
 export declare type SelfClosingFn = (attrs?: Attributes) => string;
 
+//-----------------------------------------------------------------------------
+
+const contentTags = [
+  'a',
+  'article',
+  'aside',
+  'audio',
+  'b',
+  'body',
+  'blockquote',
+  'button',
+  'canvas',
+  'caption',
+  'cite',
+  'code',
+  'colgroup',
+  'dd',
+  'details',
+  'dialog',
+  'div',
+  'dl',
+  'dt',
+  'em',
+  'fieldset',
+  'figcaption',
+  'figure',
+  'form',
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'h6',
+  'head',
+  'header',
+  'html',
+  'i',
+  'iframe',
+  'label',
+  'li',
+  'main',
+  'map',
+  'mark',
+  'menu',
+  'nav',
+  'object',
+  'ol',
+  'optgroup',
+  'option',
+  'output',
+  'p',
+  'picture',
+  'pre',
+  'progress',
+  'q',
+  'script',
+  'section',
+  'select',
+  'slot',
+  'small',
+  'span',
+  'strong',
+  'style',
+  'sub',
+  'summary',
+  'sup',
+  'table',
+  'tbody',
+  'td',
+  'template',
+  'textarea',
+  'tfoot',
+  'th',
+  'thead',
+  'time',
+  'title',
+  'tr',
+  'u',
+  'ul',
+  'var',
+  'video'
+];
+
+const selfClosingTags = [
+  'area',
+  'base',
+  'br',
+  'col',
+  'embed',
+  'hr',
+  'img',
+  'input',
+  'link',
+  'meta',
+  'source',
+  'track',
+  'wbr'
+];
+
+type ContentTagMap = Record<(typeof contentTags)[number], ContentFn>;
+
+type SelfClosingTagMap = Record<
+  (typeof selfClosingTags)[number],
+  SelfClosingFn
+>;
+
+export declare type TagMap = ContentTagMap & SelfClosingTagMap;
+
+/*
 export declare type Elements = {
   a: ContentFn;
   article: ContentFn;
@@ -104,14 +221,10 @@ export declare type Elements = {
   track: SelfClosingFn;
   wb: SelfClosingFn;
 };
+*/
 
-export function el(
-  name: string,
-  attrs: Attributes | Child[],
-  ...children: Child[]
-): string;
+// declare const elements: Elements;
 
-export function elc(name: string, attrs?: Attributes): string;
+declare const tagMap: TagMap;
 
-declare const elements: Elements;
-export default elements;
+export default tagMap;

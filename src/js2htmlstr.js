@@ -1,5 +1,3 @@
-import {HtmlValidate} from 'html-validate/browser';
-
 /**
  * This defines functions that make it easy to
  * generate strings of HTML from JavaScript.
@@ -9,7 +7,6 @@ import {HtmlValidate} from 'html-validate/browser';
 /** @typedef {import('./js2htmlstr.d.ts').Child} Child } */
 /** @typedef {import('./js2htmlstr.d.ts').ContentFn} ContentFn } */
 /** @typedef {import('./js2htmlstr.d.ts').Elements} Elements } */
-/** @typedef {import('./js2htmlstr.d.ts').Report} Report } */
 /** @typedef {import('./js2htmlstr.d.ts').SelfClosingFn} SelfClosingFn } */
 
 /**
@@ -183,16 +180,6 @@ for (const name of contentElements) {
 for (const name of selfClosingElements) {
   // @ts-ignore
   elements[name] = /** @type {SelfClosingFn} */ (attrs => elc(name, attrs));
-}
-
-/**
- * Validates a string of HTML and returns a report.
- * @param {string} html
- * @returns {Promise<Report>} true if valid; false otherwise
- */
-export async function validate(html) {
-  const htmlValidate = new HtmlValidate();
-  return htmlValidate.validateString(html);
 }
 
 export default elements;

@@ -1,9 +1,8 @@
 # js2htmlstr
 
-This is a collection of JavaScript functions
-that generate and validate HTML strings.
+This is a collection of JavaScript functions that generate HTML strings.
 
-The `example` directory contains a project that uses this package.
+## Examples
 
 The following code demonstrates basic usage.
 
@@ -34,22 +33,29 @@ const html1 = el('custom-element-with-content', {id: 'example1'}, 'My Content');
 const html2 = elc('custom-element-without-content', {id: 'example2'});
 ```
 
-To validate a string of HTML, use the `validate` function.
-This uses the package [html-validate](https://www.npmjs.com/package/html-validate).
-It returns a `Report` object whose properties are described in `types.d.ts`.
+For more usage examples , see `src/js2html.test.js`
+
+The `example` directory contains a project that uses this package.
+
+## Validation
+
+If you wish to validate an HTML string in server-side code, not in a browser,
+I recommend using the npm package
+[html-validate](https://www.npmjs.com/package/html-validate).
+
+After installing this package, do the following in code.
+
+```js
+import {HtmlValidate} from 'html-validate';
+
+const htmlValidate = new HtmlValidate();
+const report = await htmlValidate.validateString(html);
+```
+
+The `report` variable will hold a `Report` object.
 One of the properties of this object is `valid`, which holds a Boolean value.
 The remaining properties provide more detail in the case that `valid` is false.
 
-For example:
-
-```js
-import {validate} from './js2htmlstr.js';
-
-const html = '<div>bad</span>';
-const report = await validate(html);
-// report.valid will be false.
-```
-
-For more usage examples , see `src/js2html.test.js`
+## Tests
 
 To run the unit tests, enter `npm install` and `npm run test`.

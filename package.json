@@ -1,6 +1,6 @@
 {
   "name": "js2htmlstr",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "description": "JS functions that generate and validate HTML strings",
   "author": "R. Mark Volkmann",
   "license": "MIT",

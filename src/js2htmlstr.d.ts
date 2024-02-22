@@ -9,37 +9,6 @@ export declare type ContentFn = (
 
 export declare type SelfClosingFn = (attrs?: Attributes) => string;
 
-// This type is used in the return value of the `isValid` function.
-export declare type Message = {
-  column: number;
-  context?: any;
-  line: number;
-  message: string;
-  offset: number;
-  ruleId: string;
-  ruleUrl?: string;
-  selector: string | null;
-  severity: number;
-  size: number;
-};
-
-// This type is used in the return value of the `isValid` function.
-export declare type Result = {
-  errorCount: number;
-  filePath: string;
-  messages: Message[];
-  source: string | null;
-  warningCount: number;
-};
-
-// This type is used in the return value of the `isValid` function.
-export declare type Report = {
-  errorCount: number;
-  results: Result[];
-  valid: boolean;
-  warningCount: number;
-};
-
 export declare type Elements = {
   a: ContentFn;
   article: ContentFn;
@@ -143,8 +112,6 @@ export function el(
 ): string;
 
 export function elc(name: string, attrs?: Attributes): string;
-
-export function validate(html: string): Promise<Report>;
 
 declare const elements: Elements;
 export default elements;

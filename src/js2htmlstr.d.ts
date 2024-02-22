@@ -1,4 +1,4 @@
-export declare type Attributes = Object<string, boolean | number | string>;
+export declare type Attributes = Record<string, boolean | number | string>;
 
 export declare type Child = string | number;
 export declare type Children = Child[];

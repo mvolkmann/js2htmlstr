@@ -12,12 +12,11 @@
   "main": "src/js2htmlstr.js",
   "type": "module",
   "scripts": {
-    "build": "mkdir dist && cp src/js2htmlstr.js dist",
     "check": "tsc --noEmit",
     "clean": "rm -rf dist",
     "format": "prettier --write '**/*.{css,html,js,ts,tsx}'",
-    "minify": "terser src/js2htmlstr.js -o dist/js2htmlstr.min.js",
-    "prepublishOnly": "npm run build && npm run minify",
+    "minify": "terser src/js2htmlstr.js --compress --mangle -o dist/js2htmlstr.min.js",
+    "prepublishOnly": "mkdir dist && npm run minify",
     "reinstall": "rm -rf node_modules package-lock.json && npm install",
     "test": "bun --watch test"
   },

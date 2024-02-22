@@ -1,6 +1,7 @@
 bun.lockb
 example
 package-lock.json
+src
 tsconfig.json
 .prettierrc
 .vscode

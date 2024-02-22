@@ -1,5 +1,6 @@
 import {expect, test} from 'bun:test';
 import elements from './js2htmlstr.js';
+import {el} from './js2htmlstr.js';
 const {div, img, p} = elements;
 
 test('element with text', () => {
@@ -20,4 +21,9 @@ test('element with child elements', () => {
 test('self closing element', () => {
   const html = img({alt: 'giraffe', src: 'giraffe.jpg'});
   expect(html).toBe('<img alt="giraffe" src="giraffe.jpg" />');
+});
+
+test('custom element', () => {
+  const html = el('toggle-switch', {id: 'bluetooth'}, 'Bluetooth');
+  expect(html).toBe('<toggle-switch id="bluetooth">Bluetooth</toggle-switch>');
 });

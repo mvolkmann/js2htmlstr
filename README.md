@@ -8,7 +8,8 @@ The `example` directory contains a project that uses this package.
 The following code demonstrates basic usage.
 
 ```js
-import {h1, img, p, section} from 'js2htmlstr';
+import elements from 'js2htmlstr';
+const {h1, img, p, section} = elements;
 
 // This creates the following HTML with no newlines or other whitespace.
 // <section>

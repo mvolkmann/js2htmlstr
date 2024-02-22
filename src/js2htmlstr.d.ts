@@ -144,7 +144,7 @@ export function el(
 
 export function elc(name: string, attrs?: Attributes): string;
 
-export function validate(html: string): Promise<Report>;
+// export function validate(html: string): Promise<Report>;
 
 declare const elements: Elements;
 export default elements;

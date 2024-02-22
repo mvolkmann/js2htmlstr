@@ -1,0 +1,6 @@
+bun.lockb
+example
+package-lock.json
+tsconfig.json
+.prettierrc
+.vscode

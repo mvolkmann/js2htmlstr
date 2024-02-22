@@ -1,3 +1,5 @@
+import {HtmlValidate} from 'html-validate';
+
 /**
  * This defines functions that make it easy to
  * generate strings of HTML from JavaScript.
@@ -6,6 +8,7 @@
 /** @typedef {import('./types.d.ts').Attributes} Attributes } */
 /** @typedef {import('./types.d.ts').Child} Child } */
 /** @typedef {import('./types.d.ts').ContentFn} ContentFn } */
+/** @typedef {import('./types.d.ts').Report} Report } */
 /** @typedef {import('./types.d.ts').SelfClosingFn} SelfClosingFn } */
 
 /**
@@ -64,7 +67,7 @@ export function elc(name, attrs) {
   }
 
   // Close the tag.
-  html += ' />';
+  html += '>';
 
   return html;
 }
@@ -127,7 +130,6 @@ const contentElements = [
   'select',
   'slot',
   'small',
-  'source',
   'span',
   'strong',
   'style',
@@ -145,13 +147,26 @@ const contentElements = [
   'time',
   'title',
   'tr',
-  'track',
   'u',
   'ul',
   'var',
   'video'
 ];
-const selfClosingElements = ['br', 'hr', 'img', 'input', 'link', 'meta'];
+const selfClosingElements = [
+  'area',
+  'base',
+  'br',
+  'col',
+  'embed',
+  'hr',
+  'img',
+  'input',
+  'link',
+  'meta',
+  'source',
+  'track',
+  'wbr'
+];
 
 /** @type {{[name: string]: (ContentFn | SelfClosingFn)}} */
 const elements = {};
@@ -164,6 +179,16 @@ for (const name of contentElements) {
 
 for (const name of selfClosingElements) {
   elements[name] = /** @type {SelfClosingFn} */ (attrs => elc(name, attrs));
+}
+
+/**
+ * Validates a string of HTML and returns a report.
+ * @param {string} html
+ * @returns {Promise<Report>} true if valid; false otherwise
+ */
+export async function validate(html) {
+  const htmlValidate = new HtmlValidate();
+  return htmlValidate.validateString(html);
 }
 
 export default elements;

@@ -1,4 +1,4 @@
-# js2html
+# js2htmlstr
 
 This is a collection of JavaScript functions
 that generate and validate HTML strings.

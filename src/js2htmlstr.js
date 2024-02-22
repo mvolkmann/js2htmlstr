@@ -1,5 +1,4 @@
-// "npm install html-validate" to use this.
-// import {HtmlValidate} from 'html-validate';
+import {HtmlValidate} from 'html-validate/browser';
 
 /**
  * This defines functions that make it easy to
@@ -191,11 +190,9 @@ for (const name of selfClosingElements) {
  * @param {string} html
  * @returns {Promise<Report>} true if valid; false otherwise
  */
-/*
 export async function validate(html) {
   const htmlValidate = new HtmlValidate();
   return htmlValidate.validateString(html);
 }
-*/
 
 export default elements;

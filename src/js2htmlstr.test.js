@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import elements, {el} from './js2htmlstr.js';
+import elements, {el, validate} from './js2htmlstr.js';
 const {div, h1, img, input, p, section} = elements;
 
 test('element with text', () => {
@@ -27,7 +27,6 @@ test('custom element', () => {
   expect(html).toBe('<toggle-switch id="bluetooth">Bluetooth</toggle-switch>');
 });
 
-/*
 test('validate', async () => {
   let html = div(p('Hello'), p('World'));
   let report = await validate(html);
@@ -53,7 +52,6 @@ test('validate', async () => {
   expect(messages).toHaveLength(1);
   expect(messages[0]).toBe('Attribute "type" has invalid value "wrong"');
 });
-*/
 
 test('bigger', async () => {
   const html = section(
@@ -64,8 +62,6 @@ test('bigger', async () => {
   const expected =
     '<section><h1>My Demo</h1><p>This is a demo of js2htmlstr.</p><img alt="giraffe" src="giraffe.jpg"></section>';
   expect(html).toBe(expected);
-  /*
   const report = await validate(html);
   expect(report.valid).toBe(true);
-  */
 });

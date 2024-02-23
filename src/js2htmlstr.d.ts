@@ -117,7 +117,8 @@ const selfClosingTags = [
   'wbr'
 ] as const;
 
-/* With this approach, functions like `div` will have a type of `any`. */
+/*
+// With this approach, functions like `div` will have a type of `any`.
 type ContentTagMap = Record<(typeof contentTags)[number], ContentFn>;
 
 type SelfClosingTagMap = Record<
@@ -126,8 +127,8 @@ type SelfClosingTagMap = Record<
 >;
 
 export declare type TagMap = ContentTagMap & SelfClosingTagMap;
+*/
 
-/*
 // With this approach, functions like `div` will
 // have a type of `ContentFn` or`SelfClosingFn`.
 export declare type TagMap = {
@@ -225,7 +226,6 @@ export declare type TagMap = {
   track: SelfClosingFn;
   wb: SelfClosingFn;
 };
-*/
 
 declare const tagMap: TagMap;
 

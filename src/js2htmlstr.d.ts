@@ -226,7 +226,3 @@ export declare type TagMap = {
   track: SelfClosingFn;
   wb: SelfClosingFn;
 };
-
-declare const tagMap: TagMap;
-
-export default tagMap;
